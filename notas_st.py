@@ -178,7 +178,7 @@ if check_password():
         tipo_selecionado += tipo + ' '
 
     st.sidebar.markdown(f'Você selecionou: {tipo_selecionado}')
-    st.sidebar.button(label='Atualizar dados', on_click=main)
+    
 
     fichas_selecionadas = todas_fichas.query("ALUNO == @aluno_selecionado & SUBPROGRAMA ==  @subprograma_selecionado & TIPO == @options").set_index('DATA')
     ac_selecionado = todos_ac.query("ALUNO == @aluno_selecionado & SUBPROGRAMA == @subprograma_selecionado")
