@@ -87,7 +87,7 @@ def resumo_ac(data, conceito, media_turma):
 def calcula_media_ac(data, conceito, subprograma_selecionado):
     subprograma_selecionado = subprograma_selecionado
     data2 = data.query(f"SUBPROGRAMA == @subprograma_selecionado")
-    media_ac_turma = round(data2.[conceito].sum() / len(data2['ALUNO'].unique()), 2)
+    media_ac_turma = round(data2[conceito].sum() / len(data2['ALUNO'].unique()), 2)
     return media_ac_turma
 
 
