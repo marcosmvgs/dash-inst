@@ -147,8 +147,8 @@ if check_password():
   # Carregando os dados
   url2 = os.path.normpath(os.path.abspath('TODAS_FICHAS.xlsx'))
   todas_fichas = load_data_voo(url2)
-  fichas_totais = {'SPFO-1': 48,
-                   'SPFO-2': 46,
+  fichas_totais = {'SPFO-1': 45,
+                   'SPFO-2': 43,
                    'SPFO-3': 20}
   todas_fichas['INSTRUTOR'] = todas_fichas['INSTRUTOR'].str.capitalize()
 
