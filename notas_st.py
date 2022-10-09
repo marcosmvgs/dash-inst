@@ -86,7 +86,8 @@ def resumo_ac(data, conceito, media_turma):
 
 def calcula_media_ac(data, conceito, subprograma_selecionado):
     subprograma_selecionado = subprograma_selecionado
-    media_ac_turma = round(data[conceito].sum() / len(data.query(f"SUBPROGRAMA == @subprograma_selecionado")['ALUNO'].unique()), 2)
+    data2 = data.query(f"SUBPROGRAMA == @subprograma_selecionado")
+    media_ac_turma = round(data2.[conceito].sum() / len(data2['ALUNO'].unique()), 2)
     return media_ac_turma
 
 
@@ -268,7 +269,7 @@ if check_password():
   media_conceito_deficiente_turma = calcula_media_ac(todos_ac, 'DEFICIENTE', subprograma_selecionado)
   media_conceito_pm_turma = calcula_media_ac(todos_ac, 'PRECISA MELHORAR', subprograma_selecionado)
   media_conceito_destac_turma = calcula_media_ac(todos_ac, 'DESTACOU-SE', subprograma_selecionado)
-  st.write(todos_ac['DESTACOU-SE'].sum())
+  st.write(media_conceito_destac_turma)
   texto_afet_cogn = f'No campo Afetivo-Cognitivo, '
   df_ac_item = ac_selecionado.groupby('ITEM').sum(['PRECISA MELHORAR', 'DEFICIENTE', 'DESTACOU-SE'])
 
