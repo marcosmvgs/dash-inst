@@ -269,7 +269,6 @@ if check_password():
   media_conceito_deficiente_turma = calcula_media_ac(todos_ac, 'DEFICIENTE', subprograma_selecionado)
   media_conceito_pm_turma = calcula_media_ac(todos_ac, 'PRECISA MELHORAR', subprograma_selecionado)
   media_conceito_destac_turma = calcula_media_ac(todos_ac, 'DESTACOU-SE', subprograma_selecionado)
-  st.write(media_conceito_destac_turma)
   texto_afet_cogn = f'No campo Afetivo-Cognitivo, '
   df_ac_item = ac_selecionado.groupby('ITEM').sum(['PRECISA MELHORAR', 'DEFICIENTE', 'DESTACOU-SE'])
 
