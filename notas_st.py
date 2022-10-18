@@ -108,8 +108,18 @@ def check_password():
 
     if "password_correct" not in st.session_state:
         # First run, show input for password.
+        st.markdown("<h1 style='text-align: center; color: black;'>1°/3° GAV headline</h1>", unsafe_allow_html=True)
+        st.markdown("<h3 style='text-align: center; color: black;'>Quadro de acompanhamento do desempenho dos alunos</h3>", unsafe_allow_html=True)
+        coluna1, coluna2, coluna3 = st.columns((4.65, 2, 3.35))
+        with coluna1:
+            pass
+        with coluna2:
+            image = Image.open(os.path.normpath(os.path.abspath('1-3gav.png')))
+            st.image(image, width=100)
+            with coluna3:
+                pass
         st.text_input(
-            "Password", type="password", on_change=password_entered, key="password"
+            "Digite a senha", type="password", on_change=password_entered, key="password"
         )
         return False
     elif not st.session_state["password_correct"]:
