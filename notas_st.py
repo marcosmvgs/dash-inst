@@ -444,7 +444,7 @@ if check_password():
       cornerRadiusBottomRight=3,
       cornerRadiusTopRight=3).encode(
       x=alt.X('GRAU', title=''),
-      y=alt.Y('INSTRUTOR')
+      y=alt.Y('INSTRUTOR', sort="-x")
   )
 
   area_media_turma_in = grf_media_turma_in.mark_area(
@@ -458,7 +458,8 @@ if check_password():
       y=alt.Y('INSTRUTOR', title='', axis=alt.Axis(ticks=False,
                                               labels=True,
                                               domain=False,
-                                              labelPadding=10)))
+                                              labelPadding=10),
+             sort='-x'))
 
   texto_media_instrutor = barras_nota_in.mark_text(align='right',
                                              baseline='middle',
