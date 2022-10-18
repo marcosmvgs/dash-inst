@@ -108,7 +108,7 @@ def check_password():
 
     if "password_correct" not in st.session_state:
         # First run, show input for password.
-        st.markdown("<h1 style='text-align: center; color: black;'>1°/3° GAV headline</h1>", unsafe_allow_html=True)
+        st.markdown("<h1 style='text-align: center; color: black;'>1°/3° GAV</h1>", unsafe_allow_html=True)
         st.markdown("<h3 style='text-align: center; color: black;'>Quadro de acompanhamento do desempenho dos alunos</h3>", unsafe_allow_html=True)
         coluna1, coluna2, coluna3 = st.columns((4.65, 2, 3.35))
         with coluna1:
