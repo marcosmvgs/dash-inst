@@ -222,6 +222,7 @@ if check_password():
   # df_medias_alunos_voo['RANKING'] = df_medias_alunos_voo['RANKING'].apply(lambda x: str(int(x)) + f'º/'
                                                                                                   # f'{df_medias_alunos_voo.shape[0]}')
   kpi4_class_voo = df_medias_alunos_voo.loc[aluno_selecionado]['RANKING']
+  st.write(df_medias_alunos_voo)
 
   # KPI 5 - Média de Prova Aluno
   kpi5_media_al_prova = round(provas_selecionadas['NOTA'].mean(), 2)
