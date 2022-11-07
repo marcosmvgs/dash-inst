@@ -217,7 +217,7 @@ if check_password():
                                       / fichas_totais.get(subprograma_selecionado)), 2)) + '%'
 
   # KPI 4 - Classificação de voo
-  df_medias_alunos_voo = todas_fichas.loc[(todas_fichas['SUBPROGRAMA'] == subprograma_selecionado & todas_fichas['TIPO'] == 'NORMAL')].groupby('ALUNO').mean('GRAU')
+  df_medias_alunos_voo = todas_fichas.loc[(todas_fichas['SUBPROGRAMA'] == subprograma_selecionado & todas_fichas['TIPO'] == 'Normal')].groupby('ALUNO').mean('GRAU')
   df_medias_alunos_voo['RANKING'] = df_medias_alunos_voo['GRAU'].rank(ascending=False)
   # df_medias_alunos_voo['RANKING'] = df_medias_alunos_voo['RANKING'].apply(lambda x: str(int(x)) + f'º/'
                                                                                                   # f'{df_medias_alunos_voo.shape[0]}')
