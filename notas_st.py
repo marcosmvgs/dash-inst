@@ -219,10 +219,10 @@ if check_password():
   # KPI 4 - Classificação de voo
   df_medias_alunos_voo = todas_fichas.loc[((todas_fichas['SUBPROGRAMA'] == subprograma_selecionado) & (todas_fichas['TIPO'] == 'Normal'))].groupby('ALUNO').mean('GRAU')
   df_medias_alunos_voo['RANKING'] = df_medias_alunos_voo['GRAU'].rank(ascending=False)
+  df_medias_alunos_voo = df_medias_alunos_voo.sort_values(by='RANKING')
   df_medias_alunos_voo['RANKING'] = df_medias_alunos_voo['RANKING'].apply(lambda x: str(int(x)) + f'º/'
                                                                                                   f'{df_medias_alunos_voo.shape[0]}')
   kpi4_class_voo = df_medias_alunos_voo.loc[aluno_selecionado]['RANKING']
-  st.write(df_medias_alunos_voo)
 
   # KPI 5 - Média de Prova Aluno
   kpi5_media_al_prova = round(provas_selecionadas['NOTA'].mean(), 2)
@@ -647,7 +647,7 @@ if check_password():
           with col7:
               st.altair_chart(estilo_graf((grf_notas_prova_turma + grf_notas_prova + texto_nota_prova), 'Nota por prova'), use_container_width=True)
           with col8:
-              pass
+              st.write(df_medias_alunos_voo)
 
   if selected == 'Taça Eficiência':
       Taca_eficiencia.taca_eficiencia()
