@@ -241,6 +241,19 @@ if check_password():
 
   # KPI 8 - Classificação de provas Aluno
   kpi8_class_prova = df_medias_alunos_provas.loc[aluno_selecionado]['RANKING']
+  
+  
+  # KPI 9 - Horas de voo Totais
+  kpi9_horas_totais = 432
+  
+  # KPI 10 - Média da turma
+  kpi10_horas_media_turma = 418
+  
+  # KPI 11 - Horas na aviação
+  kpi11_horas_aviacao = 350
+  
+  # kpi 12 - Pau de Sebo
+  kpi12_pau_sebo = '2°/8'
 
   #### RESUMO HOPE #####
 
@@ -593,6 +606,18 @@ if check_password():
           with kpi4_provas:
               st.metric('Class. Prova', value=kpi8_class_prova)
 
+      container_kpi_horas = st.container()
+      with container_kpi_horas:
+          kpi9_horas, kpi10_horas, kpi11_horas, kpi12_horas = st.columns(4)
+          with kpi9_horas:
+              st.metric('Horas Totais', value=kpi9_horas_totais)
+          with kpi10_horas:
+              st.metric('Média Horas Turma', value=kpi10_horas_media_turma)
+          with kpi11_horas:
+              st.metric('Horas Aviação', value=kpi11_horas_aviacao)
+          with kpi12_horas:
+              st.metric('Pau de Sebo', value=kpi12_pau_sebo)         
+              
       #### EXIBIÇÃO RESUMO #####
       expander1 = st.expander('Ver resumo do desempenho do aluno')
       with expander1:
